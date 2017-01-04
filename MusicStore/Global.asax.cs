@@ -14,6 +14,7 @@ namespace MusicStore
     {
         void Application_Start(object sender, EventArgs e)
         {
+            System.Data.Entity.Database.SetInitializer(new MusicStore.Models.SampleData());
             // 在应用程序启动时运行的代码
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);

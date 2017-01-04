@@ -1,0 +1,17 @@
+﻿@model IEnumerable<MusicStore.Models.Genre>
+
+@{
+    ViewBag.Title = "Stores";
+}
+
+<h3>Browse Genres</h3>
+<p>
+    Select from @Model.Count() genres:
+</p>
+<ul>
+    @foreach(var genre in Model)
+    {
+        <li>@Html.ActionLink(genre.Name,"Browse",new { genre = genre.Name })</li>@*{ genre(对应的是Controller里面Browse的参数名) = gen.Name（对应foreach里的临时变量） }*@
+    }
+</ul>
+
